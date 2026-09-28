@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.8.1 — 2026-09-28
+
+### Changed
+- Published as `@gitnapp/x-cli`, a maintained fork of `@steipete/bird`; installs both `x-cli` and `bird` commands.
+
+### Fixed
+- Chrome cookie extraction on Linux GNOME keyring: bump `@steipete/sweet-cookie` to 0.4.4, which falls back to the `application=chrome` libsecret lookup used by current Chrome.
+- `ListLatestTweetsTimeline` fallback query ID updated (expired).
+
 ## 0.8.0 — 2026-01-19
 
 ### Added

@@ -1,11 +1,22 @@
 {
-  "name": "@steipete/bird",
-  "version": "0.8.0",
-  "description": "CLI tool for tweeting and replying via Twitter/X GraphQL API",
+  "name": "@gitnapp/x-cli",
+  "version": "0.8.1",
+  "description": "Fast X/Twitter CLI for tweeting, replying, and reading (maintained fork of steipete/bird)",
+  "license": "MIT",
+  "author": "Peter Steinberger (original author)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gitnapp/x-cli.git"
+  },
+  "homepage": "https://github.com/Gitnapp/x-cli#readme",
+  "bugs": {
+    "url": "https://github.com/Gitnapp/x-cli/issues"
+  },
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
+    "x-cli": "dist/cli.js",
     "bird": "dist/cli.js"
   },
   "files": [
@@ -32,7 +43,8 @@
     "lint:oxlint:fix": "oxlint --type-aware --tsconfig tsconfig.oxlint.json --import-plugin --node-plugin --vitest-plugin --deny-warnings --fix src tests scripts",
     "format": "biome format --write .",
     "binary": "pnpm run build:binary",
-    "graphql:update": "tsx scripts/update-query-ids.ts"
+    "graphql:update": "tsx scripts/update-query-ids.ts",
+    "prepublishOnly": "pnpm run build:dist && pnpm test"
   },
   "dependencies": {
     "@steipete/sweet-cookie": "0.4.4",
@@ -52,5 +64,8 @@
   },
   "engines": {
     "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

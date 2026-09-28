@@ -1,6 +1,9 @@
-# bird 🐦 — fast X CLI for tweeting, replying, and reading
+# x-cli 🐦 — fast X CLI for tweeting, replying, and reading
 
-`bird` is a fast X CLI for tweeting, replying, and reading via X/Twitter GraphQL (cookie auth).
+`x-cli` is a fast X CLI for tweeting, replying, and reading via X/Twitter GraphQL (cookie auth).
+
+This is a maintained fork of [`@steipete/bird`](https://www.npmjs.com/package/@steipete/bird) by Peter Steinberger,
+whose original repository is no longer available. The CLI installs as both `x-cli` and `bird`.
 
 ## Disclaimer
 
@@ -13,20 +16,14 @@ Bots are not welcome on X/Twitter. If you absolutely have to, use browser automa
 ## Install
 
 ```bash
-npm install -g @steipete/bird
+npm install -g @gitnapp/x-cli
 # or
-pnpm add -g @steipete/bird
+pnpm add -g @gitnapp/x-cli
 # or
-bun add -g @steipete/bird
+bun add -g @gitnapp/x-cli
 
 # one-shot (no install)
-bunx @steipete/bird whoami
-```
-
-Homebrew (macOS, prebuilt Bun binary):
-
-```bash
-brew install steipete/tap/bird
+bunx @gitnapp/x-cli whoami
 ```
 
 ## Quickstart
@@ -131,7 +128,7 @@ By default, the command fetches from For You, News, Sports, and Entertainment ta
 `bird` can be used as a library (same GraphQL client as the CLI):
 
 ```ts
-import { TwitterClient, resolveCredentials } from '@steipete/bird';
+import { TwitterClient, resolveCredentials } from '@gitnapp/x-cli';
 
 const { cookies } = await resolveCredentials({ cookieSource: 'safari' });
 const client = new TwitterClient({ cookies });
